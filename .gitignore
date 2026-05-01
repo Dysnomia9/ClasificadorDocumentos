@@ -1,0 +1,24 @@
+# Datos generados (se recrean con main.py)
+data/raw/
+data/processed/
+models/
+resultados/
+docs_reales/
+
+# PDFs / imágenes sueltas
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env/
+
+# Editor
+.vscode/
+
+# Temporales
+*.tmp
+*.log
