@@ -1,0 +1,98 @@
+=================================================================
+   REPORTE DE EVALUACIÓN — CLASIFICADOR DE DOCUMENTOS
+=================================================================
+
+CONFIGURACIÓN
+  Clases:              contrato, cotizacion, factura, informe, orden_compra
+  Documentos de test:  95
+  Documentos test OOD: 50
+
+─────────────────────────────────────────────────────────────────
+NAIVE BAYES
+─────────────────────────────────────────────────────────────────
+  Accuracy (test):  1.0000
+  F1 macro  (test):  1.0000
+  F1 macro  (CV 5-fold): 1.0000 ± 0.0000
+
+  Reporte por clase:
+              precision    recall  f1-score   support
+
+    contrato     1.0000    1.0000    1.0000        19
+  cotizacion     1.0000    1.0000    1.0000        19
+     factura     1.0000    1.0000    1.0000        19
+     informe     1.0000    1.0000    1.0000        19
+orden_compra     1.0000    1.0000    1.0000        19
+
+    accuracy                         1.0000        95
+   macro avg     1.0000    1.0000    1.0000        95
+weighted avg     1.0000    1.0000    1.0000        95
+
+
+  Test OOD:
+    Accuracy OOD: 0.8000
+    F1 macro OOD: 0.7986
+              precision    recall  f1-score   support
+
+    contrato     0.8750    0.7000    0.7778        10
+  cotizacion     0.7500    0.9000    0.8182        10
+     factura     0.7500    0.9000    0.8182        10
+     informe     0.8889    0.8000    0.8421        10
+orden_compra     0.7778    0.7000    0.7368        10
+
+    accuracy                         0.8000        50
+   macro avg     0.8083    0.8000    0.7986        50
+weighted avg     0.8083    0.8000    0.7986        50
+
+
+─────────────────────────────────────────────────────────────────
+SVM (Linear SVC)
+─────────────────────────────────────────────────────────────────
+  Accuracy (test):  1.0000
+  F1 macro  (test):  1.0000
+  F1 macro  (CV 5-fold): 0.9965 ± 0.0070
+
+  Reporte por clase:
+              precision    recall  f1-score   support
+
+    contrato     1.0000    1.0000    1.0000        19
+  cotizacion     1.0000    1.0000    1.0000        19
+     factura     1.0000    1.0000    1.0000        19
+     informe     1.0000    1.0000    1.0000        19
+orden_compra     1.0000    1.0000    1.0000        19
+
+    accuracy                         1.0000        95
+   macro avg     1.0000    1.0000    1.0000        95
+weighted avg     1.0000    1.0000    1.0000        95
+
+
+  Test OOD:
+    Accuracy OOD: 0.8000
+    F1 macro OOD: 0.7989
+              precision    recall  f1-score   support
+
+    contrato     0.8889    0.8000    0.8421        10
+  cotizacion     0.6667    0.8000    0.7273        10
+     factura     1.0000    0.8000    0.8889        10
+     informe     0.7692    1.0000    0.8696        10
+orden_compra     0.7500    0.6000    0.6667        10
+
+    accuracy                         0.8000        50
+   macro avg     0.8150    0.8000    0.7989        50
+weighted avg     0.8150    0.8000    0.7989        50
+
+
+─────────────────────────────────────────────────────────────────
+CONCLUSIÓN COMPARATIVA
+─────────────────────────────────────────────────────────────────
+  Mejor modelo (F1 macro IID): Empate (0.0000 pts de diferencia)
+  SVM F1 IID:          1.0000
+  Naive Bayes F1 IID:  1.0000
+
+  Mejor modelo (F1 macro OOD): SVM (0.0003 pts de diferencia)
+  SVM F1 OOD:          0.7989
+  Naive Bayes F1 OOD:  0.7986
+
+  Nota: LinearSVC es generalmente superior en clasificación de texto
+  con TF-IDF por su margen de separación óptimo. Naive Bayes es más
+  rápido y explicable, adecuado para datasets pequeños.
+=================================================================
